@@ -13,7 +13,7 @@
             <a class="navbar-brand" href="#"> Flimster </a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#"> Home </a></li>
+            <li><%=link_to'Home', root_path, method: :get %></li>
             <li><a href="#"> Films </a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -35,7 +35,7 @@
 
 <%= render 'shared/flash_messages' %>
 
-  <%= yield %>
+  
 <%= yield %>
 
 </body>
