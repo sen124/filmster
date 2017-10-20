@@ -4,9 +4,10 @@
   <title>Workspace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style= "font-family: 'Josefin Slab', serif;">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -17,7 +18,8 @@
             <li><a href="#"> Films </a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"> Edit Profile </a></li>
+            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+            
         </ul>
     </div>
 </nav>
