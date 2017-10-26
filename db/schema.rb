@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018162856) do
+ActiveRecord::Schema.define(version: 20171026203107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "plot"
+    t.string   "release_date"
+    t.boolean  "released"
+    t.string   "runtime"
+    t.string   "popularity"
+    t.string   "genre"
+    t.string   "language"
+    t.string   "budget"
+    t.string   "average_vote"
+    t.string   "vote_count"
+    t.string   "poster"
+    t.string   "homepage"
+    t.string   "tmdb_id"
+    t.string   "imdb_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "movies", ["tmdb_id"], name: "index_movies_on_tmdb_id", using: :btree
 
   create_table "staticpages", force: :cascade do |t|
     t.string   "photo"
