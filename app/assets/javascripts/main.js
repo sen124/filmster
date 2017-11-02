@@ -34,6 +34,13 @@ $(function(){
      data["results"].forEach(function(movie){
       htmlString += `<img src= ${movie["poster_path"]==null? "/assets/your_default_image.png" :imageUrl + "/" + movie["poster_path"]} data-id="${movie['id']}" class = "movie_poster"/>
                      <p>${movie["title"]}</p>
+                     <form id="rating-form" action="/reviews" method="POST">
+                       <input type="hidden" name="authenticity_token" value=${window._token} />
+                       <input type="hidden" name="tmdb_id" value=${movie["id"]} />
+                       <textarea name= "review[comment]" class="form-control" placeholder="Your review in 140 characters"/>
+                     <br />
+                       <input type="submit" class="btn btn-success pull-right" />
+                     </form>
                      <p>${movie["overview"]}</p>`;
     });
 
