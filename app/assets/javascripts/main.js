@@ -40,7 +40,7 @@ $(function(){
                        <textarea name= "review[comment]" class="form-control" placeholder="Your review in 140 characters"/>
                      <br />
                        <input type="submit" class="btn btn-success pull-right" />
-                     </form>
+                     </form> 
                      <p>${movie["overview"]}</p>`;
     });
 
