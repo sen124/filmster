@@ -2,24 +2,28 @@
 
 
 $(function(){
+  
+  
+  
+  
   let form = $('#movie-search');
   form.submit(function(e){
     e.preventDefault();
-
-    $.ajax({
-      url: 'https://api.themoviedb.org/3/search/movie?api_key=1527c2e276f4fdfe458f89ff6921d36e',
-      data: form.serialize()
+    
+  $('#movies').on('click','img.movie_poster',function(e){
+    e.preventDefault();
+  
+  
+  let id=(e.target).data('id');
+  
+  $.ajax({
+      url: 'https://api.themoviedb.org/3/movie'+ id + '?',
+      data: 'api_key : 1527c2e276f4fdfe458f89ff6921d36e'
     })
     .done(function(data){
       displayMovies(data);
-    });
+    
   });
-  $('#movies').on('click',function(e){
-    e.preventDefault();
-  let id = $ (e.target).data('id');
-  $.ajax({
-    url:'https://api.themoviedb.ord/3/movie'+ id + '?',
-    data: 'api_key:1527c2e276f4fdfe458f89ff6921d36e'
   });
   });
 
